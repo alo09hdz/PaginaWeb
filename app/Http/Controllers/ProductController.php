@@ -30,7 +30,7 @@ class ProductController extends Controller
     {
         echo "Store Productos";
         //dd($request);
-        Product::created($request->all);
+        Product::created($request->all());
     }
 
     /**
