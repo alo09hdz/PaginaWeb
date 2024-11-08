@@ -9,6 +9,9 @@
 
 <body style="background-color: rgb(27, 157, 183)">
     @include('fragments.navbar')
+    @if(@session('status'))
+        {{session('status')}}
+    @endif
     @yield('content')
 </body>
 </html>
