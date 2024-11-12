@@ -6,9 +6,13 @@
     <a href="{{route('products.create')}}">Crear Producto</a>
 </button>
 <br>
+<button>
+    <a href="{{route('brand.create')}}">Crear Marca</a>
+</button>
 <table>
     <thead>
         <th>Nombre del Producto</th>
+        <th>Nombre de la Marca</th>
         <th>Marca ID</th>
         <th>Cantidad</th>
         <th>Precio Unitario</th>
@@ -25,7 +29,7 @@
             <td>{{$product->imagen}}</td>
             <td>
                 <button><a href="{{route('products.show',$product)}}">Mostrar</a></button>
-                <button><a href="">Editar</a></button>
+                <button><a href="{{route('products.edit',$product)}}">Editar</a></button>
                 <button><a href="">Eliminar</a></button>
             </td>
         </tr>
