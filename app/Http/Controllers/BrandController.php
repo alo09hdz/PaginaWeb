@@ -15,7 +15,7 @@ class BrandController extends Controller
     {
         //
         $brands = Brand::get();
-        return view('products_index', compact('brands'));
+        return view('brand_index', compact('brands'));
     }
 
     /**
@@ -44,7 +44,7 @@ class BrandController extends Controller
     public function show(Brand $brand)
     {
         //
-        return view('brands_show', compact('brand'));
+        return view('brand_show', compact('brand'));
     }
 
     /**
@@ -53,6 +53,8 @@ class BrandController extends Controller
     public function edit(Brand $brand)
     {
         //
+        $brands = Brand::pluck('id','brand');
+        echo view('brand_edit', compact('brands','brand'));
     }
 
     /**
@@ -61,6 +63,8 @@ class BrandController extends Controller
     public function update(Request $request, Brand $brand)
     {
         //
+        $brand->update($request->all());
+        return to_route('brand.index')->with('status','Marca Actualizada');
     }
 
     /**
@@ -69,5 +73,7 @@ class BrandController extends Controller
     public function destroy(Brand $brand)
     {
         //
+        $brand->delete();
+        return to_route('brand.index')->with('status','Marca Eliminada');
     }
 }

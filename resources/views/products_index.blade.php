@@ -9,17 +9,20 @@
 <button>
     <a href="{{route('brand.create')}}">Crear Marca</a>
 </button>
+<br>
+<button>
+    <a href="{{route('brand.index')}}">Index Marcas</a>
+</button>
 <table>
     <thead>
         <th>Nombre del Producto</th>
-        <th>Nombre de la Marca</th>
         <th>Marca ID</th>
         <th>Cantidad</th>
         <th>Precio Unitario</th>
         <th>Imagen</th>
         <th>Acciones</th>
     </thead>
-    <tbody>
+    <tbody> 
         @foreach ($products as $product)
         <tr>
             <td>{{$product->nameProducts}}</td>
@@ -30,7 +33,11 @@
             <td>
                 <button><a href="{{route('products.show',$product)}}">Mostrar</a></button>
                 <button><a href="{{route('products.edit',$product)}}">Editar</a></button>
-                <button><a href="">Eliminar</a></button>
+                <form action="{{route('products.destroy',$product)}}" method="POST">
+                    @method("DELETE")
+                    @csrf
+                    <button type="submit">Eliminar</button>
+                </form>
             </td>
         </tr>
         @endforeach

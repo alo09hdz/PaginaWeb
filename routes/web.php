@@ -50,6 +50,8 @@ Route::resource('/products',App\Http\Controllers\ProductController::class);
 
 Route::resource('/brand',App\Http\Controllers\BrandController::class);
 
+Route::get('/products/{product}/delete',[App\Http\Controllers\ProductController::class, 'delete'])->name('products.delete');;
+
 Route::get('/clients', function () {
     return view('clients_index');  // Ruta de Clientes
 })->name('clients');
