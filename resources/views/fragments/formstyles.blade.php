@@ -9,7 +9,7 @@ form{
     border-radius: 12px;
     margin-block: auto; 
     margin-inline: auto;
-    background-color: #335555
+    background-color: #d47c7c
 }
 form label{
     width: 140px;

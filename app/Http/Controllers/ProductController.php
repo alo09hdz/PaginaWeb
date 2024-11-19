@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::get();
-        return view('products_index', compact('products'));
+        return view('admin.products.index', compact('products'));
     }
 
     /**
@@ -23,7 +23,7 @@ class ProductController extends Controller
     public function create()
     {  
         $brands = Brand::pluck('id','brand');
-        return view( 'products_create',compact('brands'));
+        return view( 'admin.products.create',compact('brands'));
     }
 
     /**
@@ -34,7 +34,7 @@ class ProductController extends Controller
         //echo "Registro Realizado";
         //dd($request);
         Product::create($request->all());
-        return to_route('products.index')->with('status','Producto Registrado');
+        return to_route('index')->with('status','Producto Registrado');
     }
 
     /**
@@ -43,7 +43,7 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //echo "Show Productos";
-        return view('products_show', compact('product'));
+        return view('admin.products.show', compact('product'));
     }
 
     /**
@@ -53,7 +53,7 @@ class ProductController extends Controller
     {
         //echo "Edit Productos";
         $brands = Brand::pluck('id','brand');
-        echo view('products_edit', compact('brands','product'));
+        echo view('admin.products.edit', compact('brands','product'));
     }
 
     /**
@@ -68,7 +68,7 @@ class ProductController extends Controller
 
     public function delete(Product $product)
     {
-        echo view('products_delete', compact('product'));
+        echo view('admin.products.delete', compact('product'));
     }
 
     /**

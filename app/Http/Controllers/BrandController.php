@@ -15,7 +15,7 @@ class BrandController extends Controller
     {
         //
         $brands = Brand::get();
-        return view('brand_index', compact('brands'));
+        return view('admin/brands/index', compact('brands'));
     }
 
     /**
@@ -25,7 +25,7 @@ class BrandController extends Controller
     {
         // 
         $brands = Brand::pluck('id','brand');
-        return view( 'brand_create',compact('brands'));
+        return view( 'admin/brands/create',compact('brands'));
     }
 
     /**
@@ -35,7 +35,7 @@ class BrandController extends Controller
     {
         //
         Brand::create($request->all());
-        return to_route('products.index')->with('status','Marca Registrada');
+        return to_route('index')->with('status','Marca Registrada');
     }
 
     /**
@@ -44,7 +44,7 @@ class BrandController extends Controller
     public function show(Brand $brand)
     {
         //
-        return view('brand_show', compact('brand'));
+        return view('admin/brands/show', compact('brand'));
     }
 
     /**
@@ -54,7 +54,7 @@ class BrandController extends Controller
     {
         //
         $brands = Brand::pluck('id','brand');
-        echo view('brand_edit', compact('brands','brand'));
+        echo view('admin/brands/edit', compact('brands','brand'));
     }
 
     /**
@@ -64,7 +64,7 @@ class BrandController extends Controller
     {
         //
         $brand->update($request->all());
-        return to_route('brand.index')->with('status','Marca Actualizada');
+        return to_route('brands.index')->with('status','Marca Actualizada');
     }
 
     /**
@@ -74,6 +74,6 @@ class BrandController extends Controller
     {
         //
         $brand->delete();
-        return to_route('brand.index')->with('status','Marca Eliminada');
+        return to_route('brands.index')->with('status','Marca Eliminada');
     }
 }
