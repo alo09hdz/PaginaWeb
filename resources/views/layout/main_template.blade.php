@@ -7,7 +7,7 @@
     <title>Laracrud</title>
 </head>
 
-<body style="background-color: rgb(27, 157, 183)">
+<body style="background-color: rgb(105, 27, 183)">
     @include('fragments.navbar')
     @if(@session('status'))
         {{session('status')}}

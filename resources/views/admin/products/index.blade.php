@@ -16,7 +16,8 @@
 <table>
     <thead>
         <th>Nombre del Producto</th>
-        <th>Marca ID</th>
+        <th>Marca</th>
+        <th>Descripcion</th>
         <th>Cantidad</th>
         <th>Precio Unitario</th>
         <th>Imagen</th>
@@ -26,10 +27,11 @@
         @foreach ($products as $product)
         <tr>
             <td>{{$product->nameProducts}}</td>
-            <td>{{$product->brand_id}}</td>
+            <td>{{$product->brand->brand}}</td>
+            <td>{{$product->brand->description}}</td>
             <td>{{$product->stock}}</td>
             <td>{{$product->unit_price}}</td>
-            <td>{{$product->imagen}}</td>
+            <td><img src="/imagen/products/{{$product->imagen}}"width="60" alt="producto"></td>
             <td>
                 <button><a href="{{route('products.show',$product)}}">Mostrar</a></button>
                 <button><a href="{{route('products.edit',$product)}}">Editar</a></button>
@@ -43,4 +45,7 @@
         @endforeach
     </tbody>
 </table>
+
+{{$products->links()}}
+
 @endsection
