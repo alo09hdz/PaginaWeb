@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Http\Requests\Products\StoreRequest;
+use App\Http\Requests\Products\UpdateRequest;
 
 class ProductController extends Controller
 {
@@ -68,7 +69,7 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(UpdateRequest $request, Product $product)
     {
         //echo "Update Productos";
         //Si el campo imagen tiene informacion
