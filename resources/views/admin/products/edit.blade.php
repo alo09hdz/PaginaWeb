@@ -3,8 +3,17 @@
 @section('content')
 
 @include('fragments.formstyles')
+<br>
+<h1 class="text-center">Editar un Producto</h1>
+<br>
+@if ($errors->any())
+    @foreach ($errors->all() as $e)
+        <div class="error">
+            {{$e}}
+        </div>
+    @endforeach
+@endif
 
-<h1>Editar Productos</h1>
 <form action="{{route('products.update',$product->id)}}" method="POST" enctype="multipart/form-data">
 @csrf
 @method('PUT')

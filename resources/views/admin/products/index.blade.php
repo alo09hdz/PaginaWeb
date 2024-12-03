@@ -1,19 +1,14 @@
 @extends('layout.main_template')
 @section('content')
-<h2>Index Productos</h2>
 <br>
-<button>
-    <a href="{{route('products.create')}}">Crear Producto</a>
-</button>
+<h2 class="text-center">Lista de Productos</h2>
 <br>
-<button>
-    <a href="{{route('brand.create')}}">Crear Marca</a>
-</button>
+<a type="button" class="btn btn-primary" a href="{{route('products.create')}}">Crear Producto</a>
+<a type="button" class="btn btn-primary" href="{{route('brand.create')}}">Crear Marca</a>
+<a type="button" class="btn btn-primary" a href="{{route('brand.index')}}">Index Marcas</a>
 <br>
-<button>
-    <a href="{{route('brand.index')}}">Index Marcas</a>
-</button>
-<table>
+<br>
+<table class="table table-success table-striped-columns">
     <thead>
         <th>Nombre del Producto</th>
         <th>Marca</th>
@@ -33,13 +28,17 @@
             <td>{{$product->unit_price}}</td>
             <td><img src="/imagen/products/{{$product->imagen}}"width="60" alt="producto"></td>
             <td>
-                <button><a href="{{route('products.show',$product)}}">Mostrar</a></button>
-                <button><a href="{{route('products.edit',$product)}}">Editar</a></button>
-                <form action="{{route('products.destroy',$product)}}" method="POST">
-                    @method("DELETE")
-                    @csrf
-                    <button type="submit">Eliminar</button>
-                </form>
+                <a class="btn btn-primary" href="{{route('products.show',$product)}}">
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+                
+                <a type="button" class="btn btn-warning" href="{{route('products.edit',$product)}}">
+                    <i class="fa-solid fa-file-signature"></i>
+                </a>
+                <a type="button" class="btn btn-danger" href="{{route('products.delete',$product)}}">
+                    <i class="fa-solid fa-x"></i>
+                </a>
+
             </td>
         </tr>
         @endforeach
