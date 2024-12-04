@@ -1,39 +1,24 @@
-<style>
-    header {
-        background: rgba(122, 79, 249, 0.8);
-        color: #fff;
-        padding-block: 4px;
-        margin-block: -8px;
-        margin-inline: -8px;
-    }
-
-    nav p{
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 25px;
-        padding-inline: 20px;
-    }
-
-    nav p a{
-        color: #fff;
-        text-decoration: none;
-        padding-block: 10px;
-        margin-inline: 10px;
-    }
-
-    nav p a:hover{
-        background: rgb(236, 201, 136);
-        padding-block: 5px;
-        padding-inline: 10px;
-    }
-</style>
-<header>
-    <nav>
-        <p>
-            <a href="{{route('index')}}">Inicio</a>
-            <a href="{{route('products.index')}}">Productos</a>
-            <a href="{{route('clients.index')}}">Cliente</a>
-            <a href="{{route('sales.index')}}">Ventas</a>
-        </p>    
-    </nav>    
-</header>
-<br>
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="fa-sharp fa-regular fa-candy"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{route('index')}}">Dulces</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('products.index')}}">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('clients.index')}}">Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('sales.index')}}">Ventas</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

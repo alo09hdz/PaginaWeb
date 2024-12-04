@@ -3,13 +3,14 @@
 <br>
 <h2 class="text-center">Lista de Clientes</h2>
 <br>
-<a type="button" class="btn btn-primary" a href="{{route('clients.create')}}">Crear Cliente</a>
-<a type="button" class="btn btn-primary" a href="{{route('addresses.index')}}">Index Direcciones</a>
-<a type="button" class="btn btn-primary" a href="{{route('addresses.create')}}">Crear Direcciones</a>
+<div class="d-flex justify-content-center mb-3">
+<a type="button" class="btn btn-outline-primary me-2" a href="{{route('clients.create')}}">Crear Cliente</a>
+<a type="button" class="btn btn-outline-primary me-2" a href="{{route('addresses.index')}}">Index Direcciones</a>
+<a type="button" class="btn btn-outline-primary me-2" a href="{{route('addresses.create')}}">Crear Direcciones</a>
+</div>
 <br>
-<br>
-<table class="table table-success table-striped-columns">
-    <thead>
+<table class="table table-striped">
+        <thead>
         <tr>
             <th>id Cliente</th>
             <th>Nombre</th>
@@ -31,7 +32,7 @@
             <td>{{$client->phone}}</td>
             <td>
                 <a class="btn btn-primary" href="{{route('clients.show',$client)}}">
-                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-user-plus"></i>
                 </a>
 
                 <a type="button" class="btn btn-warning" href="{{route('clients.edit',$client)}}">

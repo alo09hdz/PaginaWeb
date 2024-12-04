@@ -3,12 +3,13 @@
 <br>
 <h2 class="text-center">Lista de Productos</h2>
 <br>
-<a type="button" class="btn btn-primary" a href="{{route('products.create')}}">Crear Producto</a>
-<a type="button" class="btn btn-primary" href="{{route('brand.create')}}">Crear Marca</a>
-<a type="button" class="btn btn-primary" a href="{{route('brand.index')}}">Index Marcas</a>
+<div class="d-flex justify-content-center mb-3">
+    <a type="button" class="btn btn-outline-primary me-2" href="{{route('products.create')}}">Crear Producto</a>
+    <a type="button" class="btn btn-outline-primary me-2" href="{{route('brand.create')}}">Crear Marca</a>
+    <a type="button" class="btn btn-outline-primary" href="{{route('brand.index')}}">Index Marcas</a>
+</div>
 <br>
-<br>
-<table class="table table-success table-striped-columns">
+<table class="table table-striped">
     <thead>
         <th>Nombre del Producto</th>
         <th>Marca</th>
@@ -33,10 +34,10 @@
                 </a>
                 
                 <a type="button" class="btn btn-warning" href="{{route('products.edit',$product)}}">
-                    <i class="fa-solid fa-file-signature"></i>
+                    <i class="fa-solid fa-pen-to-square"></i>
                 </a>
                 <a type="button" class="btn btn-danger" href="{{route('products.delete',$product)}}">
-                    <i class="fa-solid fa-x"></i>
+                    <i class="fa-solid fa-trash"></i>
                 </a>
 
             </td>

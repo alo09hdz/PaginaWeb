@@ -3,8 +3,7 @@
 <br>
 <h2 class="text-center">Lista de Marcas</h2>
 <br>
-<table class="table table-success table-striped-columns">
-<thead>
+<table class="table table-striped"><thead>
     <th>Nombre de la Marca</th>
     <th>Descripcion</th>
     <th>Acciones</th>
@@ -16,10 +15,10 @@
             <td>{{$bra->description}}</td>
             <td>
                 <a type="button" class="btn btn-warning" href="{{route('brand.edit',$bra)}}">
-                    <i class="fa-solid fa-file-signature"></i>
+                    <i class="fa-solid fa-pen-to-square"></i>
                 </a>
                 <a type="button" class="btn btn-danger" href="{{route('brand.delete',$bra)}}">
-                    <i class="fa-solid fa-x"></i>
+                    <i class="fa-solid fa-trash"></i>
                 </a>
             </td>
         </tr>

@@ -4,9 +4,11 @@
 <br>
 <h2 class="text-center">Lista de Ventas</h2>
 <br>
-<a type="button" class="btn btn-primary" href="{{ route('sales.create') }}">Registrar Venta</a>
-<br><br>
-<table class="table table-success table-striped-columns">
+<div class="d-flex justify-content-center mb-3">
+<a type="button" class="btn btn-outline-primary me-2" href="{{ route('sales.create') }}">Registrar Venta</a>
+</div>
+<br>
+<table class="table table-striped">
     <thead>
         <tr>
             <th>ID Venta</th>
